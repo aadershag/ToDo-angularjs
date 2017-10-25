@@ -1,0 +1,24 @@
+body h1{
+	text-align: center;
+    font-family: cursive;
+    font-style: italic;
+    color: chocolate;
+}
+.inp{border-color: cornsilk;
+    color: aliceblue;
+    background: burlywood;
+    width: 30%;
+    height: 30px !important;
+    font-size: larger;
+    font-family: cursive;
+    border-width: 5px;
+}
+#tasksToShow{
+	    font-size: x-large;
+    font-family: serif;
+    font-style: italic;
+    color: brown;
+}
+.inp: active{
+	border:none;
+}

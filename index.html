@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>TO-do</title>
+		<link rel="stylesheet" href="custom.css">
+		 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular-resource.min.js"></script>
+		<script src="script.js"></script>
+		<style type="text/css">
+			span.sl-true{
+				color:grey;
+				text-decoration: line-through;
+			}
+		</style>
+	</head>
+	<body ng-app="mainApp" ng-controller="app">
+		<h1>Add a Task</h1>
+		 <input class="inp" ng-model="task" ng-keyup="searchEnter($event)" type="text">
+		 <div id="tasksToShow">
+		 <ul>
+		 	<li ng-repeat="onetask in tasks | orderBy: 'onetask.status'  track by $index ">
+		 	<input type="checkbox" name="cb" ng-model="onetask.status">
+		 	<span contenteditable="false" ng-keydown="enter(onetask.taskmsg)" ng-model="onetask.taskmsg" ng-dblclick="editContent(onetask.taskmsg)" class="sl-{{onetask.status}}">{{onetask.taskmsg}}</span>
+		 	<input type="button" name="Delete" value="delete" ng-click="delfield(onetask.taskmsg)">
+		 	</li>
+		 </ul>
+		 	<input type="button" name="sort" value="sort" ng-click="sort()">
+		 </div>
+	</body>
+</html>
